@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_c13_sunday/home/home.dart';
 import 'package:islami_c13_sunday/onboarding_screen.dart';
-import 'package:islami_c13_sunday/test.dart';
 
 void main() {
   runApp(const MyApp());
