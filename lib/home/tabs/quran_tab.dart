@@ -17,7 +17,7 @@ class QuranTab extends StatelessWidget {
             cursorColor: Colors.white,
             decoration: InputDecoration(
               hintText: "Sura Name",
-              prefixIcon: ImageIcon(
+              prefixIcon: const ImageIcon(
                 AssetImage("assets/images/ic_pre_search.png"),
                 color: Color(0xFFE2BE7F),
               ),
@@ -27,17 +27,17 @@ class QuranTab extends StatelessWidget {
                   fontWeight: FontWeight.bold),
               border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide(color: Color(0xFFE2BE7F))),
+                  borderSide: const BorderSide(color: Color(0xFFE2BE7F))),
               focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide(color: Color(0xFFE2BE7F))),
+                  borderSide: const BorderSide(color: Color(0xFFE2BE7F))),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
-                borderSide: BorderSide(color: Color(0xFFE2BE7F)),
+                borderSide: const BorderSide(color: Color(0xFFE2BE7F)),
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Text(
