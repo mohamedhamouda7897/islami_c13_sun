@@ -27,7 +27,6 @@ class _HomeScreenState extends State<HomeScreen> {
             fit: BoxFit.cover),
       ),
       child: Scaffold(
-        backgroundColor: Colors.transparent,
         bottomNavigationBar: BottomNavBar(onChange: (index) {
           currentIndex = index;
           setState(() {});
@@ -38,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   List<Widget> tabs = [
-     QuranTab(),
+    QuranTab(),
     const AhadethTab(),
     const SebhaTab(),
     const RadioTab(),

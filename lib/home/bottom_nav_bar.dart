@@ -15,18 +15,12 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-        showUnselectedLabels: false,
-        backgroundColor: Color(0xFFE2BE7F),
-        showSelectedLabels: true,
         currentIndex: currentIndex,
         onTap: (value) {
           currentIndex = value;
           setState(() {});
           widget.onChange(currentIndex);
         },
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Color(0xFF202020),
-        type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
               backgroundColor: Color(0xFFE2BE7F),
