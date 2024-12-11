@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_c13_sunday/home/tabs/quranTab/sura_item_horizontal.dart';
 import 'package:islami_c13_sunday/home/tabs/quranTab/sura_name_item.dart';
 import 'package:islami_c13_sunday/models/sura_model.dart';
+import 'package:islami_c13_sunday/sura_details/sura_details.dart';
 
 class QuranTab extends StatefulWidget {
   QuranTab({super.key});
@@ -44,8 +45,10 @@ class _QuranTabState extends State<QuranTab> {
         children: [
           Image.asset("assets/images/onboarding_header.png"),
           _searchItem(),
-          if (SuraModel.searchResult.isNotEmpty ||
-              searchController.text.isNotEmpty) ...[_suraNamesHorizontalList()],
+          if (!(SuraModel.searchResult.isNotEmpty ||
+              searchController.text.isNotEmpty)) ...[
+            _suraNamesHorizontalList()
+          ],
           _suraNamesVerticalList(),
         ],
       ),
@@ -109,10 +112,16 @@ class _QuranTabState extends State<QuranTab> {
               ),
               padding: EdgeInsets.zero,
               itemBuilder: (context, index) {
-                return SuraNameItem(
-                    model: SuraModel.searchResult.isNotEmpty
-                        ? SuraModel.getSelectedSuraModel(index)
-                        : SuraModel.getSuraModel(index));
+                return InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, SuraDetailsScreen.routeName,
+                        arguments: SuraModel.getSuraModel(index));
+                  },
+                  child: SuraNameItem(
+                      model: SuraModel.searchResult.isNotEmpty
+                          ? SuraModel.getSelectedSuraModel(index)
+                          : SuraModel.getSuraModel(index)),
+                );
               },
               itemCount: SuraModel.searchResult.isNotEmpty
                   ? SuraModel.searchResult.length
