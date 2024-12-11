@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami_c13_sunday/cache/cache_helper.dart';
 import 'package:islami_c13_sunday/home/home.dart';
+import 'package:islami_c13_sunday/my_theme_data.dart';
 import 'package:islami_c13_sunday/onboarding_screen.dart';
 import 'package:islami_c13_sunday/sura_details/sura_details.dart';
 
@@ -16,6 +17,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: MyThemeData.lightTheme,
+      darkTheme: MyThemeData.darkTheme,
+      themeMode: ThemeMode.light,
       debugShowCheckedModeBanner: false,
       initialRoute: CacheHelper.getEligibility() == true
           ? HomeScreen.routeName
