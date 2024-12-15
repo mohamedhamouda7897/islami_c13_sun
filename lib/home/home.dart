@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_c13_sunday/home/bottom_nav_bar.dart';
-import 'package:islami_c13_sunday/home/tabs/ahadeth_tab.dart';
+import 'package:islami_c13_sunday/home/tabs/ahadeth/ahadeth_tab.dart';
 import 'package:islami_c13_sunday/home/tabs/date_tab.dart';
 import 'package:islami_c13_sunday/home/tabs/quranTab/quran_tab.dart';
 import 'package:islami_c13_sunday/home/tabs/radio_tab.dart';
@@ -31,14 +31,19 @@ class _HomeScreenState extends State<HomeScreen> {
           currentIndex = index;
           setState(() {});
         }),
-        body: tabs[currentIndex],
+        body: Column(
+          children: [
+            Image.asset("assets/images/onboarding_header.png"),
+            Expanded(child: tabs[currentIndex]),
+          ],
+        ),
       ),
     );
   }
 
   List<Widget> tabs = [
     QuranTab(),
-    const AhadethTab(),
+     AhadethTab(),
     const SebhaTab(),
     const RadioTab(),
     const DateTab()
