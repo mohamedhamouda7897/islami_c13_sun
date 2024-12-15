@@ -28,8 +28,8 @@ class MyApp extends StatelessWidget {
       routes: {
         OnboardingScreen.routeName: (context) => const OnboardingScreen(),
         SuraDetailsScreen.routeName: (context) => SuraDetailsScreen(),
-        HadethDetailsScreen.routeName: (context) => HadethDetailsScreen(),
-        HomeScreen.routeName: (context) => HomeScreen(),
+        HadethDetailsScreen.routeName: (context) => const HadethDetailsScreen(),
+        HomeScreen.routeName: (context) => const HomeScreen(),
       },
     );
   }
